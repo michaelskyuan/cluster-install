@@ -135,7 +135,8 @@ All done!
 
 #### 7. Install MySQL JDBC Connector
 ```
-wget http://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.35.tar.gz /usr/share/java/mysql-connector-java.jar
+wget http://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.35.tar.gz 
+/usr/share/java/mysql-connector-java.jar
 ```
 
 #### 8. mysql -u root -p
@@ -153,8 +154,8 @@ grant all on nav.* to 'nav'@'%' IDENTIFIED BY 'nav';
 create database navms DEFAULT CHARACTER SET utf8;
 grant all on navms.* to 'navms'@'%' IDENTIFIED BY 'navms';
 create database oozie;
-grant all privileges on oozie.* to 'oozie'@'localhost' identified by 'oozie';sud
-grant all privileges on oozie.* to 'oozie'@'%' identified by 'oozie';
+grant all privileges on oozie.* to 'oozie'@'localhost' identified by 'oozie';
+grant all privileges on oozie.* to 'oozie'@'%' identified by 'oozie';;
 ```
 
 ### Cloudera Manager Path B installation
