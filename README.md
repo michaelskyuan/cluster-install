@@ -2,7 +2,7 @@
 
 #### 1. Check swappiness on all your nodes, then set the recommended value
 ```
-echo 1 > /proc/sys/vm/swappiness
+sysctl vm.swappiness=1
 echo "vm.swappiness = 1" >> /etc/sysctl.conf
 ```
 #### 2. Set noatime on DN volumes
@@ -61,11 +61,7 @@ service --status-all |grep nscd
 
 #### 1. sudo yum -y install mysql-server
 
-#### 2. sudo service mysqld stop
-
-#### 3. rm -rf /var/lib/mysql/ib_logfile*
-
-#### 4. vi /etc/my.cnf
+#### 2. vi /etc/my.cnf
 ```
 [mysqld]
 transaction-isolation = READ-COMMITTED
@@ -110,11 +106,11 @@ innodb_log_file_size = 512M
 log-error=/var/log/mysqld.log
 pid-file=/var/run/mysqld/mysqld.pid
 ```
-#### 5. sudo /sbin/chkconfig mysqld on
+#### 3. sudo /sbin/chkconfig mysqld on
 
-#### 6. sudo service mysqld start
+#### 4. sudo service mysqld start
 
-#### 7. sudo /usr/bin/mysql_secure_installation
+#### 5. sudo /usr/bin/mysql_secure_installation
 ```
 [...]
 Enter current password for root (enter for none):
@@ -155,7 +151,7 @@ create database navms DEFAULT CHARACTER SET utf8;
 grant all on navms.* to 'navms'@'%' IDENTIFIED BY 'navms';
 create database oozie;
 grant all privileges on oozie.* to 'oozie'@'localhost' identified by 'oozie';
-grant all privileges on oozie.* to 'oozie'@'%' identified by 'oozie';;
+grant all privileges on oozie.* to 'oozie'@'%' identified by 'oozie';
 ```
 
 ### Cloudera Manager Path B installation
